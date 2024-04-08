@@ -1,5 +1,26 @@
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 410px;
+    margin-bottom: 60px;
 }
 
 .card__picture {
+    margin-bottom: 35px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+}
+
+.card__title {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card__description {
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
 }

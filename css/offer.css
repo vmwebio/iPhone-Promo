@@ -11,6 +11,22 @@
     align-items: center;
 }
 
+.offer__button {
+    cursor: pointer;
+    background-color: #0071e3;
+    color: white;
+    border-radius: 30px;
+    padding: 18px 23px;
+    width: 262px;
+    height: 60px;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.offer__button:hover {
+    background-color: #258aef;
+}
+
 @media (min-resolution: 2dppx) {
     .offer__container {
         background-image: url("../images/phones_x2.webp");

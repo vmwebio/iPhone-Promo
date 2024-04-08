@@ -40,20 +40,26 @@ button {
     cursor: pointer;
     background-color: #0071e3;
     color: white;
-    border: none;
     border-radius: 30px;
     padding: 18px 23px;
     width: 262px;
     height: 60px;
+    outline: none;
+    border: 1px solid transparent;
 }
 
 button:hover {
     background-color: #258aef;
 }
 
+button:focus {
+    box-shadow: 1px 1px 3px #515151;
+}
+
 a {
     text-decoration: none;
     color: inherit;
+    outline: none;
 }
 
 ul {
@@ -73,12 +79,6 @@ fieldset {
 
 iframe {
     border: none;
-}
-
-.form {
-}
-
-.checkbox {
 }
 
 .container {
