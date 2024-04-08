@@ -6,11 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="fonts/SFUIText-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/SFUIText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/SFUIText-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/choices.min.css" rel="stylesheet">
     <link href="css/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/choices.min.js" defer></script>
     <script src="js/script.js" defer></script>
-    <title>Phone Promo</title>
+    <title>iPhone Promo</title>
 </head>
     <body>
         <header class="header">
@@ -47,34 +52,52 @@
                     <h2 class="features__title">iPhone 13. Ничего лишнего</h2>
                     <ul class="features__list">
                         <li class="features__item card">
-                            <img class="card__picture" src="images/features/camera.webp" alt="Новый модуль камеры">
-                            <h3 class="feature__title">Камера</h3>
-                            <p class="features__description">Система камер PRO.</p>
+                            <img class="card__picture"
+                                 src="images/features/camera.webp"
+                                 srcset="images/features/x2/camera_x2.webp 2x"
+                                 alt="Новый модуль камеры">
+                            <h3 class="card__title">Камера</h3>
+                            <p class="card__description">Система камер PRO.</p>
                         </li>
                         <li class="features__item card">
-                            <img class="card__picture" src="images/features/compect.webp" alt="Комплектация iPhone">
-                            <h3 class="feature__title">Комплектация</h3>
-                            <p class="features__description">Зарядное устройство. Беспроводные наушники.</p>
+                            <img class="card__picture"
+                                 src="images/features/compect.webp"
+                                 srcset="images/features/x2/compect_x2.webp 2x"
+                                 alt="Комплектация iPhone">
+                            <h3 class="card__title">Комплектация</h3>
+                            <p class="card__description">Зарядное устройство. Беспроводные наушники.</p>
                         </li>
                         <li class="features__item card">
-                            <img class="card__picture" src="images/features/color.webp" alt="Цвета для iPhone">
-                            <h3 class="feature__title">Цвет</h3>
-                            <p class="features__description">Глубоководный синий. Графитовый.</p>
+                            <img class="card__picture"
+                                 src="images/features/color.webp"
+                                 srcset="images/features/x2/color_x2.webp"
+                                 alt="Цвета для iPhone">
+                            <h3 class="card__title">Цвет</h3>
+                            <p class="card__description">Глубоководный синий. Графитовый.</p>
                         </li>
                         <li class="features__item card">
-                            <img class="card__picture" src="images/features/frame.webp" alt="Корпус для iPhone">
-                            <h3 class="feature__title">Корпус</h3>
-                            <p class="features__description">Водонипроницаемый и противоударный корпус.</p>
+                            <img class="card__picture"
+                                 src="images/features/frame.webp"
+                                 srcset="images/features/x2/frame_x2.webp"
+                                 alt="Корпус для iPhone">
+                            <h3 class="card__title">Корпус</h3>
+                            <p class="card__description">Водонипроницаемый и противоударный корпус.</p>
                         </li>
                         <li class="features__item card">
-                            <img class="card__picture" src="images/features/line.webp" alt="Система камер PRO для iPhone">
-                            <h3 class="feature__title">Линейка</h3>
-                            <p class="features__description">iPhone 13, iPhone 13 mini, iPhone 13 Pro и 13 Pro Max.</p>
+                            <img class="card__picture"
+                                 src="images/features/line.webp"
+                                 srcset="images/features/x2/line_x2.webp"
+                                 alt="Система камер PRO для iPhone">
+                            <h3 class="card__title">Линейка</h3>
+                            <p class="card__description">iPhone 13, iPhone 13 mini, iPhone 13 Pro и 13 Pro Max.</p>
                         </li>
                         <li class="features__item card">
-                            <img class="card__picture" src="images/features/charger.webp" alt="Линейка iPhone">
-                            <h3 class="feature__title">Зарядка</h3>
-                            <p class="features__description">Аккумулятор-магнит.</p>
+                            <img class="card__picture"
+                                 src="images/features/charger.webp"
+                                 srcset="images/features/x2/charger_x2.webp"
+                                 alt="Линейка iPhone">
+                            <h3 class="card__title">Зарядка</h3>
+                            <p class="card__description">Аккумулятор-магнит.</p>
                         </li>
                     </ul>
                 </div>
@@ -82,8 +105,8 @@
             <!--order-->
             <section class="main__section order">
                 <div class="container">
-                    <h2 class="order__title">Оформить предзаказ</h2>
-                    <form class="order__form form">
+                    <h2 class="order__title" id="order">Оформить предзаказ</h2>
+                    <form class="order__form form" id="form-order">
                         <fieldset class="order__fieldset">
                             <legend class="order__legend">Персональные данные</legend>
                             <label class="order__label" for="fullName">ФИО</label>
@@ -129,39 +152,38 @@
                         </fieldset>
                         <fieldset class="order__fieldset">
                             <legend class="order__legend">Аксессуары</legend>
-                            <label class="order__label" for="case">
-                                <input class="order__input checkbox" id="case" name="case" type="checkbox">
+                            <label class="order__label_checkbox" for="case">
+                                <input class="order__checkbox checkbox" id="case" name="case" type="checkbox">
                                 Чехол
                             </label>
-                            <label class="order__label" for="headphones">
-                                <input class="order__input checkbox" id="headphones" name="headphones" type="checkbox">
+                            <label class="order__label_checkbox" for="headphones">
+                                <input class="order__checkbox checkbox" id="headphones" name="headphones" type="checkbox">
                                 Наушники AirPods 3
                             </label>
-                            <label class="order__label" for="glass">
-                                <input class="order__input checkbox" id="glass" name="glass" type="checkbox">
+                            <label class="order__label_checkbox" for="glass">
+                                <input class="order__checkbox checkbox" id="glass" name="glass" type="checkbox">
                                 Защитное стекло
                             </label>
-                            <label class="order__label" for="charger">
-                                <input class="order__input checkbox" id="charger" name="charger" type="checkbox">
+                            <label class="order__label_checkbox" for="charger">
+                                <input class="order__checkbox checkbox" id="charger" name="charger" type="checkbox">
                                 Зарядное устройство MagSafe
                             </label>
                         </fieldset>
-                        <button class="order__submit button" type="submit">Отправить</button>
                     </form>
+                    <!--order submit-->
+                    <button class="order__submit button" form="form-order" type="submit">Отправить</button>
                 </div>
             </section>
         </main>
         <footer class="footer">
             <div class="container">
-                <p class="footer__copyright">
-                    © iPhone Promo, 2024
-                </p>
-                <p class="footer__developer">
+                <div class="footer__copyright">
+                    <a href="#" target="_blank" rel="noopener">© iPhone Promo, 2024</a>
+                </div>
+                <div class="footer__developer">
                     <a href="https://t.me/vmwebio" target="_blank" rel="noopener">Developer: Valera M.</a>
-                </p>
-                <p class="footer__developer">
                     <a href="https://t.me/Marshmalloowww" target="_blank" rel="noopener">Designer: Anastasia Ilina</a>
-                </p>
+                </div>
             </div>
         </footer>
     </body>
