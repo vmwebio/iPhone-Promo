@@ -1,0 +1,78 @@
+.offer__container {
+    padding: 30px;
+    margin: 0 -30px;
+    min-height: 820px;
+    background-image: url("../images/phones.webp");
+    background-size: 1290px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-resolution: 2dppx) {
+    .offer__container {
+        background-image: url("../images/phones_x2.webp");
+    }
+}
+
+.offer__main-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.offer__title {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 41px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.offer__price {
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 800px) {
+    .offer__container {
+        min-height: 720px;
+        background-size: 800px;
+        background-image: url("../images/phones_800.webp");
+    }
+
+    @media (min-resolution: 2dppx) {
+        .offer__container {
+            background-image: url("../images/phones_800_x2.webp");
+        }
+    }
+
+    .offer__main-title {
+        font-size: 18px;
+    }
+
+    .offer__title {
+        font-size: 26px;
+    }
+
+    .offer__price {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 440px) {
+    .offer__container {
+        background-size: 400px;
+        background-image: url("../images/phones_mob.webp");
+    }
+
+    @media (min-resolution: 2dppx) {
+        .offer__container {
+            background-image: url("../images/phones_mob_x2.webp");
+        }
+    }
+}
