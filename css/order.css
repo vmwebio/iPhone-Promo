@@ -46,7 +46,6 @@
 
 .order__input {
     border-radius: 20px;
-    max-width: 470px;
     width: 100%;
     height: 90px;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -165,6 +164,7 @@
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* arrow select */
 .choices[data-type*=select-one]:after {
     height: 9px;
     width: 9px;
@@ -173,12 +173,12 @@
     margin-top: -15px;
     margin-right: 35px;
     transform: rotate(-45deg);
-    z-index: 1;
     transition: border-color 0.2s ease-in-out, margin-top 0.2s ease-in-out;
 }
 
 .choices[data-type*=select-one].is-open:after {
     border-color: #000000 #000000 transparent transparent;
+    z-index: 1;
 }
 
 .choices[data-type*=select-one] .choices__inner {
@@ -195,6 +195,57 @@
     z-index: 10;
 }
 
+@media (max-width: 800px) {
+    .choices {
+        height: 60px;
+    }
+    /* arrow  select*/
+    .choices[data-type*=select-one]:after {
+        height: 6px;
+        width: 6px;
+        border-width: 6px;
+        margin-top: -10px;
+        margin-right: 10px;
+    }
+
+    .choices:last-child {
+        margin-bottom: 25px;
+    }
+
+    .order__fieldset {
+        padding: 10px 20px;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .order__legend {
+        font-size: 20px;
+    }
+
+    .order__input  {
+        height: 60px;
+        margin-bottom: 25px;
+        box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .order__checkbox:before {
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+    }
+
+    .order__checkbox {
+        margin-left: -40px;
+        margin-top: 0;
+    }
+
+    .order__checkbox:after {
+        top: 8px;
+        left: 7px;
+    }
+
+}
 /* End Choices js */
 
 
@@ -216,24 +267,6 @@
 
     .features__list {
         margin-bottom: 50px;
-    }
-
-    .order__fieldset {
-        padding: 10px 20px;
-        font-size: 15px;
-        margin-bottom: 30px;
-        border-radius: 15px;
-    }
-
-    .order__legend {
-        font-size: 20px;
-    }
-
-    .order__input  {
-        height: 50px;
-        margin-bottom: 25px;
-        box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
     }
 
     .order__submit {
