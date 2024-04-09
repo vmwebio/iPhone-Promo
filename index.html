@@ -13,6 +13,7 @@
     <link href="css/choices.min.css" rel="stylesheet">
     <link href="css/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.7.1.min.js" defer></script>
     <script src="js/choices.min.js" defer></script>
     <script src="js/script.js" defer></script>
     <title>iPhone Promo</title>
@@ -26,7 +27,7 @@
                     <!--navigation-->
                     <nav class="header__navigation navigation">
                         <ul class="navigation__list">
-                            <li class="navigation__item"><a href="#">Оформить предзаказ</a></li>
+                            <li class="navigation__item"><a href="#order">Оформить предзаказ</a></li>
                             <li class="navigation__item"><a href="#">Доставка</a></li>
                             <li class="navigation__item"><a href="#">Официальный сайт Apple</a></li>
                         </ul>
@@ -42,7 +43,7 @@
                         <h1 class="offer__main-title">iPhone 13</h1>
                         <h2 class="offer__title">Ближе, чем можно представить.</h2>
                         <p class="offer__price">от 79 000 руб.</p>
-                        <button class="offer__button button">Оформить предзаказ</button>
+                        <a href="#order" class="offer__button_link">Оформить предзаказ</a>
                     </div>
                 </div>
             </section>
@@ -103,40 +104,42 @@
                 </div>
             </section>
             <!--order-->
-            <section class="main__section order">
+            <section class="main__section order" id="order">
                 <div class="container">
-                    <h2 class="order__title" id="order">Оформить предзаказ</h2>
-                    <form class="order__form form" id="form-order">
+                    <h2 class="order__title" id="order__title">Оформить предзаказ</h2>
+                    <p class="order__fields_info">Поля помеченые (*) обязательны к заполнению!</p>
+                    <form class="order__form form" id="form-order" method="POST" action="https://jsonplaceholder.typicode.com/posts">
                         <fieldset class="order__fieldset">
                             <legend class="order__legend">Персональные данные</legend>
-                            <label class="order__label" for="fullName">ФИО</label>
-                            <input class="order__input" id="fullName" name="fullName" type="text">
-                            <label class="order__label" for="phone">Телефон</label>
-                            <input class="order__input" id="phone" name="phone" type="number">
-                            <label class="order__label" for="email">E-mail</label>
-                            <input class="order__input" id="email" name="email" type="email">
+                            <label class="order__label" for="fullName">ФИО<sup>*</sup></label>
+                            <input class="order__input" id="fullName" name="fullName" type="text" required>
+                            <label class="order__label" for="phone">Телефон<sup>*</sup></label>
+                            <input class="order__input" id="phone" name="phone" type="text" required>
+                            <label class="order__label" for="email">E-mail<sup>*</sup></label>
+                            <input class="order__input" id="email" name="email" type="email" required>
                         </fieldset>
                         <fieldset class="order__fieldset">
                             <legend class="order__legend">Адрес доставки</legend>
-                            <label class="order__label" for="city">Город</label>
-                            <input class="order__input" id="city" name="city" type="text">
-                            <label class="order__label" for="index">Индекс</label>
-                            <input class="order__input" id="index" name="index" type="text">
-                            <label class="order__label" for="adress">Адрес</label>
-                            <input class="order__input" id="adress" name="adress" type="text">
+                            <label class="order__label" for="city">Город<sup>*</sup></label>
+                            <input class="order__input" id="city" name="city" type="text" required>
+                            <label class="order__label" for="index">Индекс<sup>*</sup></label>
+                            <input class="order__input" id="index" name="index" type="text" required>
+                            <label class="order__label" for="address">Адрес<sup>*</sup></label>
+                            <input class="order__input" id="address" name="address" type="text" required>
                         </fieldset>
-
                         <fieldset class="order__fieldset">
                             <legend class="order__legend">Выбор модели</legend>
-                            <label class="order__label" for="model">Модель</label>
-                            <select class="order__select" id="model">
+                            <label class="order__label" for="model">Модель<sup>*</sup></label>
+                            <select class="order__select" name="model" id="model" type="select" required>
+                                <option value="">--Выберите модель--</option>
                                 <option value="iPhone13">iPhone 13</option>
                                 <option value="iPhone13mini">iPhone 13 mini</option>
                                 <option value="iPhone13Pro">iPhone 13 Pro</option>
                                 <option value="iPhone13ProMax">iPhone 13 Pro и 13 Pro Max</option>
                             </select>
                             <label class="order__label" for="color">Цвет</label>
-                            <select class="order__select" id="color" type="select">
+                            <select class="order__select" name="color" id="color" type="select">
+                                <option value="">--Выберите акксесуары--</option>
                                 <option value="Perl">Perl</option>
                                 <option value="Pink">Pink</option>
                                 <option value="Violet">Violet</option>
@@ -152,20 +155,20 @@
                         </fieldset>
                         <fieldset class="order__fieldset">
                             <legend class="order__legend">Аксессуары</legend>
-                            <label class="order__label_checkbox" for="case">
-                                <input class="order__checkbox checkbox" id="case" name="case" type="checkbox">
+                            <label class="order__label_checkbox">
+                                <input class="order__checkbox checkbox" name="case" value="case" type="checkbox">
                                 Чехол
                             </label>
-                            <label class="order__label_checkbox" for="headphones">
-                                <input class="order__checkbox checkbox" id="headphones" name="headphones" type="checkbox">
+                            <label class="order__label_checkbox">
+                                <input class="order__checkbox checkbox" name="headphones" value="headphones" type="checkbox">
                                 Наушники AirPods 3
                             </label>
-                            <label class="order__label_checkbox" for="glass">
-                                <input class="order__checkbox checkbox" id="glass" name="glass" type="checkbox">
+                            <label class="order__label_checkbox">
+                                <input class="order__checkbox checkbox" name="glass" value="glass" type="checkbox">
                                 Защитное стекло
                             </label>
-                            <label class="order__label_checkbox" for="charger">
-                                <input class="order__checkbox checkbox" id="charger" name="charger" type="checkbox">
+                            <label class="order__label_checkbox">
+                                <input class="order__checkbox checkbox" name="charger" value="charger" type="checkbox">
                                 Зарядное устройство MagSafe
                             </label>
                         </fieldset>
