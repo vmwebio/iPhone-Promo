@@ -195,6 +195,24 @@
     z-index: 10;
 }
 
+.order__success_info {
+    max-width: 600px;
+    width: 100%;
+    background-color: #d8f1dd;
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+}
+
+.order__fields_info {
+    font-size: 18px;
+    color: #4d4d4d;
+}
+
+.order__fields_info {
+    margin-bottom: 30px;
+}
+
 @media (max-width: 800px) {
     .choices {
         height: 60px;
@@ -245,6 +263,10 @@
         left: 7px;
     }
 
+    .order__fields_info {
+        font-size: 15px;
+    }
+
 }
 /* End Choices js */
 
@@ -263,6 +285,10 @@
     .order__title {
         font-size: 25px;
         margin-bottom: 30px;
+    }
+
+    .order__fields_info {
+        font-size: 15px;
     }
 
     .features__list {
