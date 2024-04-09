@@ -1,4 +1,4 @@
-// Custom Select - Choices js
+// Form Select - Choices js
 new Choices('#model', {
     searchEnabled: false,
     itemSelectText: '',
@@ -9,7 +9,7 @@ new Choices('#color', {
     itemSelectText: '',
 });
 
-// Form Order - Jquery
+// Форма заказа
 $('#form-order').on('submit', function (event) {
     event.preventDefault();
 
@@ -19,12 +19,10 @@ $('#form-order').on('submit', function (event) {
         dataType: 'html',
         data: $('#form-order').serialize(),
         success: function(data) {
-            console.log(data);
             $('#form-order').html(`<div class="order__success_info"><h4>Ваш заказ отправлен!</h4></div>`);
             $('.order__submit').hide();
-            $('#order').hide();
+            $('#order__title').hide();
             $('.order__fields_info').hide();
         }
-    })
+    });
 });
-

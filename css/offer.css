@@ -11,19 +11,19 @@
     align-items: center;
 }
 
-.offer__button {
+.offer__button_link {
     cursor: pointer;
     background-color: #0071e3;
     color: white;
     border-radius: 30px;
     padding: 18px 23px;
-    width: 262px;
+    width: auto;
     height: 60px;
     outline: none;
     border: 1px solid transparent;
 }
 
-.offer__button:hover {
+.offer__button_link:hover {
     background-color: #258aef;
 }
 
